@@ -14,6 +14,7 @@ const swaggerDocument = require("./swagger.json");
 
 // import swaggerUi from "swagger-ui-express";
 // import swaggerDocument from "./swagger.json";
+// import swaggerDocument from "./swagger.json" assert { type: "json" };
 
 const app = express();
 
