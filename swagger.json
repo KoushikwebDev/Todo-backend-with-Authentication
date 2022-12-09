@@ -5,9 +5,10 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "localhost:8000",
+  "host": "todo-backend-with-auth.up.railway.app",
   "basePath": "/",
   "schemes": [
+    "https",
     "http"
   ],
   "paths": {

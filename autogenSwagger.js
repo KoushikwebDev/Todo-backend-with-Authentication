@@ -10,7 +10,7 @@ const doc = {
     description: "Description",
   },
   host: `${HOST}`,
-  schemes: ["http"],
+  schemes: ["https", "http"],
 };
 
 const outputFile = "./swagger.json";
