@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "todo-backend-with-auth.up.railway.app",
+  "host": "todo-backend-with-authentication.vercel.app",
   "basePath": "/",
   "schemes": [
     "https",
