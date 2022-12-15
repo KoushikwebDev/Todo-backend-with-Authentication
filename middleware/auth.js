@@ -5,7 +5,10 @@ dotenv.config();
 const auth = (req, res, next) => {
   //   console.log(req.cookies);
 
-  const { token } = req.cookies;
+  const token =
+    req.cookies.token ||
+    req.header("Authorization").replace("Bearer ", "") ||
+    req.body.token;
 
   if (!token) {
     throw new Error("Access Denied.");
