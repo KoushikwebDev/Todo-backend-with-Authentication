@@ -4,10 +4,11 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
   {
+    name: String,
     firstName: {
       type: String,
       trim: true,
-      required: true,
+      // required: true,
       // validator: (value) => {
       //   if (!validator.isEmail(value)) {
       //     throw new Error("Email is not Valid.");
@@ -17,8 +18,8 @@ const userSchema = new Schema(
 
     lastName: {
       type: String,
-      trim: true,
-      required: true,
+      // trim: true,
+      // required: true,
     },
     email: {
       type: String,

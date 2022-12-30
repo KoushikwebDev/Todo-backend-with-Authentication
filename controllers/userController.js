@@ -11,9 +11,9 @@ const home = (req, res) => {
 // register a user
 const register = async (req, res) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { name, firstName, lastName, email, password } = req.body;
 
-    if (!(firstName && lastName && email && password)) {
+    if (!(email && password)) {
       throw new Error("All fields are Required.");
     }
 
@@ -31,14 +31,21 @@ const register = async (req, res) => {
     tasks[2] = "You ?";
 
     const newUser = await User.create({
+      name,
       firstName,
       lastName,
       email,
       password: myPass,
-      todos: [{ uuid: uuidv4(), title: `Hello ${firstName}`, tasks }],
+      todos: [
+        {
+          uuid: uuidv4(),
+          title: `Hello ${firstName ? firstName : name}`,
+          tasks,
+        },
+      ],
     });
 
-    await newUser.save();
+    await newUser.save({ validateBeforeSave: false });
 
     // create newToken
     const newToken = JWT.sign(

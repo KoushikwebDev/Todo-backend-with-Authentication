@@ -4,9 +4,11 @@ import { v4 as uuidv4 } from "uuid";
 const getTodo = async (req, res) => {
   try {
     const email = req.params.email;
-
+    // console.log(email);
+    if (!email) {
+      throw new Error("Email is required.");
+    }
     let todo = await User.findOne({ email });
-    // console.log(todo);
 
     res.status(200).json({
       success: true,
